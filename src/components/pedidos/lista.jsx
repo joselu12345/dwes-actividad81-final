@@ -1,4 +1,4 @@
-import { obtenerPedidos, obtenerPizzas, obtenerRepartidores } from "@/lib/data";
+import { obtenerPedidos,  obtenerPedidosDeUsuario, obtenerPizzas, obtenerRepartidores } from "@/lib/data";
 import Link from "next/link";
 import Modal from "@/components/modal";
 import PedidoInsertar from "./insertar";
@@ -14,7 +14,7 @@ export default async function Pedidos() {
     if (sesion && sesion.user.role === 'ADMIN')
         pedidos = await obtenerPedidos()
     else if (sesion && sesion.user.role === 'USER')
-        pedidos = await obtenerPedidos(sesion.user.id)
+        pedidos = await obtenerPedidosDeUsuario(sesion.user.id)
 
     const repartidores = await obtenerRepartidores()
     const pizzas = await obtenerPizzas()

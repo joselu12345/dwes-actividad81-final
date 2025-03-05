@@ -91,8 +91,10 @@ export async function getUserByEmail(email) {
 export {
     obtenerRepartidores,
     obtenerRepartidor,
+    obtenerPedidosDeUsuario,
     obtenerPedidos,
     obtenerPedido,
     obtenerPizzas,
     obtenerPizza
+
 }
