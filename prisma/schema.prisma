@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Repartidor {
+  id       Int      @id @default(autoincrement())
+  nombre   String
+  telefono String
+  pedidos  Pedido[]
+
+  @@map("repartidores")
+}
+
+model Pedido {
+  id                Int         @id @default(autoincrement())
+  fecha_hora        DateTime
+  nombre_cliente    String
+  direccion_cliente String
+  repartidorId      Int?
+  repartidor        Repartidor? @relation(fields: [repartidorId], references: [id])
+  userId            String?
+  user              User?       @relation(fields: [userId], references: [id])
+  pizzas            Pizza[]
+
+  @@map("pedidos")
+}
+
+model Pizza {
+  id      Int      @id @default(autoincrement())
+  nombre  String
+  precio  Float
+  pedidos Pedido[]
+
+  @@map("pizzas")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String?   @unique
+  password      String?
+  emailVerified DateTime?
+  image         String?
+  role          String?   @default("USER") // o  ADMIN
+  accounts      Account[]
+  pedidos       Pedido[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
