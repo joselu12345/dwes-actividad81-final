@@ -57,7 +57,7 @@ export const config = {
      * - favicon.ico, sitemap.xml, robots.txt (metadata files)
      * - $ (home page)
      */
-    '/((?!api|images|pizzas|auth|about|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|$).*)',
+    '/((?!api|images|pizzas|auth|acerca|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|$).*)',
     '/api/auth/error'
   ],
 }
