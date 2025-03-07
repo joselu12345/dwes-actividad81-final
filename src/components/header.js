@@ -18,8 +18,8 @@ async function Header() {
                 {/* {session?.user?.role === 'ADMIN'
                     && <Link href="/admin">Admin panel</Link>
                 } */}
-                {/* <Link href="/dashboard">Dashboard</Link>
-                <Link href="/about">About</Link> */}
+                { session &&  <Link href="/dashboard">Dashboard</Link>}
+                <Link href="/acerca">Acerca</Link>
             </nav>
             <div className='flex gap-4'>
                 {session
