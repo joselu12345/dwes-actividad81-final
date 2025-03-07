@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { auth } from "@/auth"
 import { logout } from '@/lib/actions'
-import { Home } from 'lucide-react';
+import { Pizza } from 'lucide-react';
 
 
 async function Header() {
@@ -9,15 +9,15 @@ async function Header() {
     // console.log(session);
 
     return (
-        <header className='bg-blue-700 text-white flex px-10 py-2 justify-between items-center'>
+        <header className='bg-blue-300 text-white flex px-10 py-2 justify-between items-center'>
             <nav className='flex gap-4 items-center'>
-                <h1 className="text-3xl font-bold">Página de Inicio</h1>
+                <h1 className="text-3xl font-bold">Inicio</h1>
                 <Link href="/">
-                    <Home />
+                    <Pizza />
                 </Link>
-                {session?.user?.role === 'ADMIN'
+                {/* {session?.user?.role === 'ADMIN'
                     && <Link href="/admin">Admin panel</Link>
-                }
+                } */}
                 {/* <Link href="/dashboard">Dashboard</Link>
                 <Link href="/about">About</Link> */}
             </nav>

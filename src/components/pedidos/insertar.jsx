@@ -21,7 +21,7 @@ function PedidoInsertar({ repartidores, pizzas, user }) {
             <h1 className="text-xl text-blue-500">Nuevo pedido</h1>
 
             <label> Fecha y hora:
-                <input name="fecha_hora" type="datetime-local" />
+                <input name="fecha_hora" type="datetime-local" defaultValue={new Date().toISOString().split('Z')[0]}/>
             </label>
 
             <label> Nombre del cliente:
