@@ -9,7 +9,7 @@ async function Header() {
     // console.log(session);
 
     return (
-        <header className='bg-cyan-700 text-white flex px-10 py-2 justify-between items-center'>
+        <header className='bg-amber-600 text-white flex px-10 py-2 justify-between items-center'>
             <nav className='flex gap-4 items-center'>
                 <h1 className="text-3xl font-bold">Inicio</h1>
                 <Link href="/">

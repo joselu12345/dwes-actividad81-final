@@ -15,6 +15,10 @@ function PizzaModificar({ pizza }) {
                 <input name="precio" type='number' step={0.01} min={0} defaultValue={pizza.precio} />
             </label>
 
+            <label>Foto:
+                <input name="foto" defaultValue={pizza.foto} />
+            </label>
+
             <button className="p-2 rounded-lg bg-yellow-400 text-white cursor-pointer">Modificar</button>
         </form>
     );

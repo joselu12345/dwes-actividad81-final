@@ -28,6 +28,7 @@ export default async function Pizzas() {
                                 {pizza.nombre}
                             </Link>
                             <p>{pizza.precio} €</p>
+                            <p><img src="{pizza.foto}" /></p>
 
                             {sesion && sesion?.user?.role === 'ADMIN' &&
                                 <Modal openElement={<p className="inline p-2 rounded-lg bg-yellow-400 text-white cursor-pointer">Modificar</p>}>
