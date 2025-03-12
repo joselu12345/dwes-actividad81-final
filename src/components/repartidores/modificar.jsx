@@ -15,7 +15,7 @@ function RepartidorModificar({ repartidor }) {
                 <input name='telefono' defaultValue={repartidor.telefono} />
             </label>
 
-            <button className="p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Modificar</button>
+            <button className="p-2 rounded-lg bg-yellow-400 text-white cursor-pointer">Modificar</button>
         </form>
     );
 }

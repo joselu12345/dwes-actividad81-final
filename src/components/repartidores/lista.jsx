@@ -13,23 +13,23 @@ export default async function Repartidores() {
 
     return (
         <div className="flex flex-col gap-4">
-            <Modal openElement={<p className="inline p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Insertar</p>}>
+            <Modal openElement={<p className="inline p-2 rounded-lg bg-green-500 text-white cursor-pointer">Insertar</p>}>
                 <RepartidorInsertar />
             </Modal>
             {
                 repartidores.map(repartidor =>
-                    <div key={repartidor.id} className="p-4 bg-slate-200 rounded-lg">
+                    <div key={repartidor.id} className="p-4 bg-cyan-100 rounded-lg">
                         <div className="flex flex-col gap-4">
                             <Link href={`/repartidores/${repartidor.id}`} className="font-bold cursor-pointer">
                                 {repartidor.nombre}
                             </Link>
                             <p>Teléfono: {repartidor.telefono}</p>
 
-                            <Modal openElement={<span className="p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Modificar</span>}>
+                            <Modal openElement={<span className="p-2 rounded-lg bg-yellow-400 text-white cursor-pointer">Modificar</span>}>
                                 <RepartidorModificar repartidor={repartidor} />
                             </Modal>
 
-                            <Modal openElement={<p className="inline p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Eliminar</p>}>
+                            <Modal openElement={<p className="inline p-2 rounded-lg bg-red-600 text-white cursor-pointer">Eliminar</p>}>
                                 <RepartidorEliminar repartidor={repartidor} />
                             </Modal>
 

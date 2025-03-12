@@ -15,14 +15,14 @@ export default async function Pizzas() {
         <div className="flex flex-col gap-4">
 
             {sesion && sesion?.user?.role === 'ADMIN' &&
-                <Modal openElement={<p className="inline p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Insertar</p>}>
+                <Modal openElement={<p className="inline p-2 rounded-lg bg-green-500 text-white cursor-pointer">Insertar</p>}>
                     <PizzaInsertar />
                 </Modal>
             }
 
             {
                 pizzas.map(pizza =>
-                    <div key={pizza.id} className="p-4 mb-4 bg-slate-200 rounded-lg">
+                    <div key={pizza.id} className="p-4 mb-4 bg-cyan-100 rounded-lg">
                         <div className="flex flex-col gap-4">
                             <Link href={`/pizzas/${pizza.id}`} className="font-bold cursor-pointer">
                                 {pizza.nombre}
@@ -30,13 +30,13 @@ export default async function Pizzas() {
                             <p>{pizza.precio} €</p>
 
                             {sesion && sesion?.user?.role === 'ADMIN' &&
-                                <Modal openElement={<p className="inline p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Modificar</p>}>
+                                <Modal openElement={<p className="inline p-2 rounded-lg bg-yellow-400 text-white cursor-pointer">Modificar</p>}>
                                     <PizzaModificar pizza={pizza} />
                                 </Modal>
                             }
 
                             {sesion && sesion?.user?.role === 'ADMIN' &&
-                                <Modal openElement={<p className="inline p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Eliminar</p>}>
+                                <Modal openElement={<p className="inline p-2 rounded-lg bg-red-600 text-white cursor-pointer">Eliminar</p>}>
                                     <PizzaEliminar pizza={pizza} />
                                 </Modal>
                             }

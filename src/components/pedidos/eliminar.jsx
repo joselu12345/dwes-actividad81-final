@@ -25,7 +25,7 @@ function PedidoEliminar({ pedido }) {
             <p>DIRECCIÓN CLIENTE: {pedido.direccion_cliente}</p>
             <form className="flex flex-col gap-4" action={action} id={formId}>
                 <input type="hidden" name="id" defaultValue={pedido.id} />
-                <button className="p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Eliminar</button>
+                <button className="p-2 rounded-lg bg-red-600 text-white cursor-pointer">Eliminar</button>
             </form>
         </div>
     );

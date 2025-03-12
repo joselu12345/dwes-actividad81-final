@@ -57,7 +57,7 @@ function PedidoInsertar({ repartidores, pizzas, user }) {
                 )
             }
 
-            <button className="p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Insertar pedido</button>
+            <button className="p-2 rounded-lg bg-green-500 text-white cursor-pointer">Insertar pedido</button>
         </form>
 
     );

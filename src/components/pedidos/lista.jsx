@@ -21,12 +21,12 @@ export default async function Pedidos() {
 
     return (
         <div className="flex flex-col gap-4">
-            <Modal openElement={<p className="inline p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Insertar</p>}>
+            <Modal openElement={<p className="inline p-2 rounded-lg bg-green-500 text-white cursor-pointer">Insertar</p>}>
                 <PedidoInsertar repartidores={repartidores} pizzas={pizzas} user = {sesion.user}/>
             </Modal>
             {
                 pedidos.map(pedido =>
-                    <div key={pedido.id} className="p-4 mb-4 bg-slate-200 rounded-lg">
+                    <div key={pedido.id} className="p-4 mb-4 bg-cyan-100 rounded-lg">
                         <div className="flex flex-col gap-4">
                             <Link href={`/pedidos/${pedido.id}`} className="font-bold cursor-pointer">
                                 {new Date(pedido.fecha_hora).toLocaleString()}
@@ -35,11 +35,11 @@ export default async function Pedidos() {
                             <p>Dirección del cliente: {pedido.direccion_cliente}</p>
 
 
-                            <Modal openElement={<p className="inline p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Modificar</p>}>
+                            <Modal openElement={<p className="inline p-2 rounded-lg bg-yellow-400 text-white cursor-pointer">Modificar</p>}>
                                 <PedidoModificar pedido={pedido} repartidores={repartidores} pizzas={pizzas} />
                             </Modal>
 
-                            <Modal openElement={<p className="inline p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Eliminar</p>}>
+                            <Modal openElement={<p className="inline p-2 rounded-lg bg-red-600 text-white cursor-pointer">Eliminar</p>}>
                                 <PedidoEliminar pedido={pedido} />
                             </Modal>
                         </div>

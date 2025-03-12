@@ -8,7 +8,7 @@ function RepartidorEliminar({ repartidor }) {
             <p>TELÉFONO: {repartidor.telefono}</p>
             <form className="flex flex-col gap-4" action={eliminarRepartidor}>
                 <input type="hidden" name="id" defaultValue={repartidor.id} />
-                <button className="p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Eliminar</button>
+                <button className="p-2 rounded-lg bg-red-600 text-white cursor-pointer">Eliminar</button>
             </form>
         </div>
     );
