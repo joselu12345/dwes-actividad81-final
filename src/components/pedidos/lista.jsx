@@ -33,7 +33,9 @@ export default async function Pedidos() {
                             </Link>
                             <p>Nombre del cliente: {pedido.nombre_cliente}</p>
                             <p>Dirección del cliente: {pedido.direccion_cliente}</p>
-
+                            <div>Pedido:
+                                {pedido.pizzas.map(pizza => <p key={pizza.id} className="indent-8"> {pizza.nombre} </p> )}
+                            </div>
 
                             <Modal openElement={<p className="inline p-2 rounded-lg bg-yellow-400 text-white cursor-pointer">Modificar</p>}>
                                 <PedidoModificar pedido={pedido} repartidores={repartidores} pizzas={pizzas} />
