@@ -11,9 +11,9 @@ async function Header() {
     return (
         <header className='bg-amber-600 text-white flex px-10 py-2 justify-between items-center'>
             <nav className='flex gap-4 items-center'>
-                <h1 className="text-3xl font-bold">Inicio</h1>
-                <Link href="/">
-                    <Pizza />
+                
+                <Link className='flex gap-3 items-center' href="/">
+                    <Pizza /> <h1 className="text-2xl font-bold hidden md:block">Joselu's pizza</h1>
                 </Link>
                 {/* {session?.user?.role === 'ADMIN'
                     && <Link href="/admin">Admin panel</Link>

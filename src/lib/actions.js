@@ -258,6 +258,11 @@ export async function login(prevState, formData) {
         }
     }
 
+    if (user.password == null) {
+        return {
+            error: 'Este usuario esta registrado con '+ user.accounts[0].provider
+        }
+    }
     // Comparamos password 
     const matchPassword = await bcrypt.compare(password, user.password)
 
